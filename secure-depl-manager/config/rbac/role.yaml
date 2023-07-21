@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - prime.github.com
+  resources:
+  - securedeployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - prime.github.com
+  resources:
+  - securedeployments/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - prime.github.com
+  resources:
+  - securedeployments/status
+  verbs:
+  - get
+  - patch
+  - update

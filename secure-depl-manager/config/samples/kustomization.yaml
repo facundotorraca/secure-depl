@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- prime_v1_securedeployment.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

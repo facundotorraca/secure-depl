@@ -1,0 +1,27 @@
+# permissions for end users to view securedeployments.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: securedeployment-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: secure-depl-manager
+    app.kubernetes.io/part-of: secure-depl-manager
+    app.kubernetes.io/managed-by: kustomize
+  name: securedeployment-viewer-role
+rules:
+- apiGroups:
+  - prime.github.com
+  resources:
+  - securedeployments
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - prime.github.com
+  resources:
+  - securedeployments/status
+  verbs:
+  - get

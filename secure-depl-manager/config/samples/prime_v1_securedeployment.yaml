@@ -1,0 +1,12 @@
+apiVersion: prime.github.com/v1
+kind: SecureDeployment
+metadata:
+  labels:
+    app.kubernetes.io/name: securedeployment
+    app.kubernetes.io/instance: securedeployment-sample
+    app.kubernetes.io/part-of: secure-depl-manager
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: secure-depl-manager
+  name: securedeployment-sample
+spec:
+  # TODO(user): Add fields here
